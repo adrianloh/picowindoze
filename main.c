@@ -1,18 +1,17 @@
 #include "pico/stdlib.h"
 
+#define LED_PIN 25
+
 int main() {
-    const uint LED_PIN = PICO_DEFAULT_LED_PIN;
     gpio_init(LED_PIN);
     gpio_set_dir(LED_PIN, GPIO_OUT);
     uint i = 0;
-    bool led_on = false;
     do {
         i++;
         if (i % 1000000 == 0) {
             i = 0;
-            led_on = !led_on;
-            gpio_put(LED_PIN, led_on);
+            gpio_xor_mask(1u << LED_PIN);
         }
-    } while (true);
+    } while (1);
     return 0;
 }

@@ -17,12 +17,7 @@ add_executable(picoblink
 # Add any additional libraries you want to link against
 target_link_libraries(picoblink 
     pico_stdlib
-    # tinyusb_device 
-    # tinyusb_board
 )
-# target_link_libraries(picoblink hardware_adc)
-# target_link_libraries(picoblink hardware_dma)
-
 
 # Create map/bin/hex/uf2 files
 pico_add_extra_outputs(picoblink)
