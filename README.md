@@ -53,3 +53,11 @@ Or using `apt`:
 ```
 sudo apt install ninja-build
 ```
+
+# Pi Debug Probe
+
+To upload a binary to the Pico, use `openocd` (included here) like this:
+
+```
+.\openocd.exe -f .\cmsis-dap.cfg -f .\rp2040.cfg -c "adapter speed 5000" -c "program picoblink.elf verify reset exit"
+```
