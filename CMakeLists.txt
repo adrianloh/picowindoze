@@ -17,7 +17,9 @@ add_executable(picowindoze
 # Add any additional libraries you want to link against
 target_link_libraries(picowindoze 
     pico_time
+    hardware_pwm
     pico_stdlib
+    hardware_irq
 )
 
 # Create map/bin/hex/uf2 files
